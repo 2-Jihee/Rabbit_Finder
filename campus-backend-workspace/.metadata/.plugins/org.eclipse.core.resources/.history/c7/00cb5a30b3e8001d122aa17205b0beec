@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class MyClassFirst {
+	public static void main(String[] args) {
+        View view = new View();
+        BusinessLogic logic = new BusinessLogic();
+
+        int dan = view.getDan();
+        dan = logic.validateDan(dan);
+        view.printResult(dan);
+    }
+	
+	
+}

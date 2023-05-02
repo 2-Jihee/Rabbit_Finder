@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class View {
+	BusinessLogic logic = new BusinessLogic();
+    Scanner sc = new Scanner(System.in);
+    
+    public int getNum() {
+    	int num = 0;
+        while(true) {
+            System.out.print("출력할 단을 입력하세요.(1~999): ");
+            num = sc.nextInt();
+            if(validateNum(num)) {
+            	System.out.println("유효하지 않은 숫자입니다.");
+            } else {
+            	break;
+            }
+        }
+        return num;
+    }
+
+    public void printResult(int num) {
+        System.out.println(num + "단 입니다.");
+        for (int i = 1; i < 10; i++) {
+            System.out.println(num + " * " + i + " = " + num * i);
+        }
+    }
+}
