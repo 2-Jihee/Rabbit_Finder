@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+public class MyClassFirst {
+	public static void main(String[] args) {
+        View view = new View();
+        BusinessLogic logic = new BusinessLogic();
+
+        int dan = view.getDan();
+        dan = logic.validateDan(dan);
+        view.printResult(dan);
+    }
+	
+	public class View {
+	    private Scanner scanner;
+
+	    public View() {
+	        this.scanner = new Scanner(System.in);
+	    }
+
+	    public int getDan() {
+	        int dan;
+	        do {
+	            System.out.print("출력할 단을 입력하세요.(1~999): ");
+	            while (!scanner.hasNextInt()) {
+	                System.out.println("정수를 입력하세요.");
+	                scanner.next();
+	            }
+	            dan = scanner.nextInt();
+	        } while (dan <= 0 || dan >= 1000);
+	        return dan;
+	    }
+
+	    public void printResult(int dan) {
+	        System.out.println(dan + "단 입니다.");
+	        for (int i = 1; i < 10; i++) {
+	            System.out.println(dan + " * " + i + " = " + dan * i);
+	        }
+	    }
+	}
+	
+	public class BusinessLogic {
+	    public int validateDan(int dan) {
+	        if (dan <= 0 || dan >= 1000) {
+	            throw new IllegalArgumentException("유효하지 않은 숫자입니다.");
+	        }
+	        return dan;
+	    }
+
+	    public void printDan(int dan) {
+	        System.out.println(dan + "단 입니다.");
+	        for (int i = 1; i < 10; i++) {
+	            System.out.println(dan + " * " + i + " = " + dan * i);
+	        }
+	    }
+	}
+
+}

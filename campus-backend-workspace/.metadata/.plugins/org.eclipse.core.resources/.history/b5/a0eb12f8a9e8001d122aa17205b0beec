@@ -1,0 +1,9 @@
+/*
+ * @author gyu
+ * 
+ */
+public class MyClassFirst {
+	public static void main(String[] args) {
+		System.out.println("hello, world!");
+	}
+}

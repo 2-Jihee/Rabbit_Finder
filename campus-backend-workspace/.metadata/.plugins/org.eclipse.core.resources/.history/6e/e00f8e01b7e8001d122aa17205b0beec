@@ -1,0 +1,8 @@
+public class BusinessLogic {
+    public int validateNum(int num) {
+        if (num <= 0 || num >= 1000) {
+            throw new IllegalArgumentException("유효하지 않은 숫자입니다.");
+        }
+        return num;
+    }
+}
